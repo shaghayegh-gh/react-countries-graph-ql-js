@@ -55,16 +55,6 @@ function Countries({ countries }) {
   };
 
   const generateActiveState = (index) => {
-    if (mount) {
-      if (index === 9) {
-        return true;
-      }
-
-      if (items.length < 10 && index === items.length - 1) {
-        return true;
-      }
-    }
-
     if (index === activeItem.index) return activeItem.isActive;
 
     return false;
