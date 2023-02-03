@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import { LIST_COUNTRIES } from "./queries/countries-queries";
 import Header from "./components/header/header";
+import Footer from "./components/footer/footer"
 import SearchBox from "./components/search-box/search-box";
 import Countries from "./components/countries/countries";
 import Container from "@mui/material/Container";
 import Loading from "./components/loading/loading";
 import Error from "./components/error/error";
+
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -27,6 +29,7 @@ function App() {
         <SearchBox params={(p) => refetch(p)} />
         {loading ? <Loading /> : <Countries countries={countries} />}
       </Container>
+      <Footer />
     </>
   );
 }
