@@ -1,6 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
+import { render } from 'react-dom';
+import CssBaseline from '@mui/material/CssBaseline';
+import App from './App';
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+
+render(
+    <CssBaseline>
+      <App />
+    </CssBaseline>,
+  document.getElementById('root')
+);
