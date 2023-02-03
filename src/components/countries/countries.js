@@ -4,6 +4,7 @@ import InfiniteScroll from "react-infinite-scroller";
 import LinearProgress from "@mui/material/LinearProgress";
 import Box from "@mui/material/Box";
 import Country from "../country/country";
+import CountriesHead from "../countries-head/countries-head";
 import { useState } from "react";
 import { useEffect } from "react";
 import { countriesStyles } from "./countries-style";
@@ -85,6 +86,7 @@ function Countries({ countries }) {
 
   return (
     <Box sx={{ ...countriesStyles }}>
+      <CountriesHead />
       <InfiniteScroll
         pageStart={0}
         loadMore={loadMoreDate}
