@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import { LIST_COUNTRIES } from "./queries/countries-queries";
 import Container from "@mui/material/Container";
+import Loading from "./components/loading/loading";
 import Error from "./components/error/error";
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
 
   return (
       <Container sx={{ mt: 5, mb: 5, minHeight: "100vh" }}>
-        {loading ? 'loading': 
+        {loading ? <Loading /> : 
         countries.map((con,i) =>  <div key={i}>{con.name}</div> )}
       </Container>
 
