@@ -7,7 +7,7 @@ import Country from "../country/country";
 import CountriesHead from "../countries-head/countries-head";
 import { useState } from "react";
 import { useEffect } from "react";
-import { countriesStyles } from "./countries-style";
+import { countriesStyles, countriesBodyStyles } from "./countries-style";
 import useChunk from "../../hooks/useChunk";
 
 function Countries({ countries }) {
@@ -87,22 +87,25 @@ function Countries({ countries }) {
   return (
     <Box sx={{ ...countriesStyles }}>
       <CountriesHead />
-      <InfiniteScroll
-        pageStart={0}
-        loadMore={loadMoreDate}
-        hasMore={isMorePage}
-        loader={<LinearProgress key={0} />}
-      >
-        {items.map((c, i) => (
-          <Country
-            index={"country" + i}
-            key={c.code + i}
-            country={c}
-            isActive={generateActiveState(i)}
-            onClick={() => handelOnClick(i)}
-          />
-        ))}
-      </InfiniteScroll>
+      <Box sx={{ ...countriesBodyStyles }}>
+        <InfiniteScroll
+          pageStart={0}
+          loadMore={loadMoreDate}
+          hasMore={isMorePage}
+          loader={<LinearProgress key={0} />}
+          useWindow={false}
+        >
+          {items.map((c, i) => (
+            <Country
+              index={"country" + i}
+              key={c.code + i}
+              country={c}
+              isActive={generateActiveState(i)}
+              onClick={() => handelOnClick(i)}
+            />
+          ))}
+        </InfiniteScroll>
+      </Box>
     </Box>
   );
 }
