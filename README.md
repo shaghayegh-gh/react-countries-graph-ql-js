@@ -2,9 +2,12 @@
 
 ## About
 
-This project is an example SPA written in React that shows a list of countries with their details using a public GraphQL API. When a country is clicked, the country's background will be changed. It is possible to search by code, continent and currency.
+This project is an example SPA written in `React` with `JavaScript` that shows a list of countries with their details using a public `GraphQL API.` When a country is clicked, the country's background will be changed. It is possible to search by code, continent and currency.
 
 The project uses a  public GraphQL API at this address: https://countries.trevorblades.com
+
+TypeScript version: [github.com/shaghayegh-gh/react-countries-graph-ql-ts](https://github.com/shaghayegh-gh/react-countries-graph-ql-ts)
+
 
 ## How it looks
 <br/>
